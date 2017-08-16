@@ -28,7 +28,7 @@ class route{
             
             // index/index/id/01/name/dejan/sex/man
             //  [0]/[1] /[2]/[3]/[4] / [5] /[6]/[7]
-            $path = $_SERVER['REQUEST_URI'];
+            $path = rtrim($_SERVER['REQUEST_URI'],'.html');
             $patharr = explode('/',trim($path,'/'));
             if(isset($patharr[0])){
                 // 判断访问应用模块
