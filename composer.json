@@ -1,4 +1,17 @@
 {
+	"name": "aileshe/weeio",
+    "description": "the Weeio Framework",
+    "type": "framework",
+    "keywords": ["framework","weeio","ORM"],
+    "homepage": "http://www.honey58.com/",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "Dejan.He",
+            "email": "673008865@qq.com"
+        }
+    ],
+	"minimum-stability": "dev",
 	"require":{
 		"php":">= 5.3.0",
 		"filp/whoops":"*",

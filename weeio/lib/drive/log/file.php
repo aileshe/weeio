@@ -1,17 +1,12 @@
 <?php
-// +----------------------------------------------------------------------
-// | Weeio - 简单、高效的PHP微框架    http://github.com/aileshe/weeio
-// +----------------------------------------------------------------------
-// | Copyright (c) 2017 Dejan.He All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: Dejan.He <673008865@qq.com>
-// +----------------------------------------------------------------------
+/**
+ * Weeio - 简单、高效的PHP微框架    http://github.com/aileshe/weeio
+ * Copyright (c) 2017 Dejan.He All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * Author: Dejan.He <673008865@qq.com>
+ */
 
-//----------------------------------
-// Weeio 日志类驱动文件
-//----------------------------------
+// Weeio 日志类文件形式保存驱动类
 
 namespace weeio\lib\drive\log;
 use weeio\lib\conf;

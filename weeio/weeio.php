@@ -1,17 +1,12 @@
 <?php
-// +----------------------------------------------------------------------
-// | Weeio - 简单、高效的PHP微框架    http://github.com/aileshe/weeio
-// +----------------------------------------------------------------------
-// | Copyright (c) 2017 Dejan.He All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
-// | Author: Dejan.He <673008865@qq.com>
-// +----------------------------------------------------------------------
+/**
+ * Weeio - 简单、高效的PHP微框架    http://github.com/aileshe/weeio
+ * Copyright (c) 2017 Dejan.He All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * Author: Dejan.He <673008865@qq.com>
+ */
 
-//----------------------------------
-// Weeio公共入口文件
-//----------------------------------
+// Weeio 公共入口文件
 
 namespace weeio;
 class weeio{
