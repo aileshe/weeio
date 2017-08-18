@@ -1,4 +1,4 @@
-# weeio
-Weeio 是一个基于MVC设计开发的 PHP 微框架，他集成了Medoo、Twig，只需要花一个小时看下Medoo和Twig官方文档就可以使用Weeio快速编写出简单、高效的Web应用或API。
+# Weeio - 简单、高效的PHP 微框架。
+
 
 Author: Dejan &nbsp;&nbsp;&nbsp;  QQ: 673008865
