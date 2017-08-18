@@ -13,12 +13,12 @@ class indexController extends \weeio\weeio{
         $data = '这是网站后台模块!';
         dump($_GET);
         $this->assign('data',$data);
-        $this->display('index.html');
+        $this->display();
     }
     
     public function test(){
         $data = 'test';
         $this->assign('data',$data);
-        $this->display('test.html');
+        $this->display();
     }
 }

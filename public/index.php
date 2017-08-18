@@ -11,7 +11,7 @@ define('CORE', ROOT.'/weeio');//框架的核心文件目录
 define('APP', ROOT.'/app');//项目文件目录
 define('MODULE', 'Home'); // 默认模块
 
-include '../vendor/autoload.php';
+include '../weeio/vendor/autoload.php';
 
 define('DEBUG', true);//是否开启调试模式
 if(DEBUG){

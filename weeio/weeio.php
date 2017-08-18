@@ -13,22 +13,24 @@ class weeio{
     public static $classMap = [];
     public $assign;
     static public $module; #访问模块
+    static public $controller; # 访问控制器
+    static public $action; # 访问方法
     static public function run(){
         $route = new \weeio\lib\route();
         self::$module=$route->module;
-        $controller= $route->controller;
-        $action=$route->action;
-        $ctrlFile=APP.'/'.self::$module.'/controller/'.$controller.'Controller.php';
-        $ctrlClass='\\app\\'.self::$module.'\\controller\\'.$controller.'Controller';
+        self::$controller= $route->controller;
+        self::$action=$action=$route->action;
+        $ctrlFile=APP.'/'.self::$module.'/controller/'.self::$controller.'Controller.php';
+        $ctrlClass='\\app\\'.self::$module.'\\controller\\'.self::$controller.'Controller';
         if(is_file($ctrlFile)){
             include $ctrlFile;
             $ctrl = new $ctrlClass;
             $ctrl->$action();
             // 日志类初始化
             \weeio\lib\log::init();
-            \weeio\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.$action);
+            \weeio\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.self::$action);
         }else{
-            throw new \Exception('找不到控制器'.$controller);
+            throw new \Exception('找不到控制器'.self::$controller);
         }
     }
     static public function load($class){
@@ -53,15 +55,16 @@ class weeio{
         $this->assign[$name]=$value;
     }
     
-    public function display($file){
-        $file=APP.'/'.self::$module.'/view/'.$file;
-        if(is_file($file)){
-            $loader = new \Twig_Loader_Filesystem(APP.'/'.self::$module.'/view');
+    public function display($file=NULL){
+        $file=$file?$file.'.html':self::$action.'.html';
+        $path=APP.'/'.self::$module.'/view/'.self::$controller.'/'.$file;
+        if(is_file($path)){
+            $loader = new \Twig_Loader_Filesystem(APP.'/'.self::$module.'/view/'.self::$controller);
             $twig = new \Twig_Environment($loader, array(
                 'cache' => ROOT.'/runtime/cache',
                 'debug' => DEBUG,
             ));
-            $template = $twig->load('index.html');
+            $template = $twig->load($file);
             $template->display($this->assign?$this->assign:array());
         }
     }
