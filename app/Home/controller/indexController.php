@@ -21,4 +21,12 @@ class indexController extends \weeio\weeio{
         $this->assign('data',$data);
         $this->display();
     }
+    
+    /**
+     * 测试调用公共函数
+     */
+    public function func(){
+        get_path(); // 最外层公共函数库
+        get_path_r(); // 模块公共函数库
+    }
 }

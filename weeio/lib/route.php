@@ -66,5 +66,14 @@ class route{
             $this->controller=conf::get('CONTROLLER','route');
             $this->action=conf::get('ACTION','route');
         }
+        
+        // 加载公共函数库
+        if(is_file(APP.'/common/function.php')){
+            include APP.'/common/function.php';
+        }
+        // 加载模块函数库
+        if(is_file(APP.'/'.$this->module.'/common/function.php')){
+            include APP.'/'.$this->module.'/common/function.php';
+        }
     }
 }
