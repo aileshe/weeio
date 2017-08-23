@@ -29,4 +29,12 @@ class indexController extends \weeio\weeio{
         get_path(); // 最外层公共函数库
         get_path_r(); // 模块公共函数库
     }
+    
+    /**
+     * 测试URL参数绑定
+     */
+    function urlPrmBind($id,$name='Dejan'){
+        echo "id:{$id}&nbsp;&nbsp;name:{$name}";
+        dump($_GET);
+    }
 }
