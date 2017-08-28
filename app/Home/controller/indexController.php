@@ -33,8 +33,15 @@ class indexController extends \weeio\weeio{
     /**
      * 测试URL参数绑定
      */
-    function urlPrmBind($id,$name='Dejan'){
+    public function urlPrmBind($id,$name='Dejan'){
         echo "id:{$id}&nbsp;&nbsp;name:{$name}";
         dump($_GET);
+    }
+    
+    /**
+     * 数据库操作测试
+     */
+    public function getData(){
+        print_r(M()->select('user_content','*'));
     }
 }

@@ -18,4 +18,6 @@ return array(
 	// [optional]
 	'charset' => 'utf8',
 	'port' => 3306,
+    // [optional] Table prefix
+    'prefix' => ''
 );
