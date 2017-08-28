@@ -1,7 +1,0 @@
-2017-08-28 11:40:56"ctrl:\\app\\Home\\controller\\indexController   action:getData"
-2017-08-28 11:41:02"ctrl:\\app\\Home\\controller\\indexController   action:index"
-2017-08-28 11:41:05"ctrl:\\app\\Home\\controller\\indexController   action:index"
-2017-08-28 11:41:06"ctrl:\\app\\Home\\controller\\indexController   action:index"
-2017-08-28 11:41:20"ctrl:\\app\\Home\\controller\\indexController   action:urlPrmBind"
-2017-08-28 11:41:25"ctrl:\\app\\Home\\controller\\indexController   action:urlPrmBind"
-2017-08-28 11:41:32"ctrl:\\app\\Home\\controller\\indexController   action:urlPrmBind"
