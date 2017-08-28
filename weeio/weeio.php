@@ -20,21 +20,13 @@ class weeio{
         self::$module=$route->module;
         self::$controller= $route->controller;
         self::$action=$route->action;
-        $ctrlFile=APP.'/'.self::$module.'/controller/'.self::$controller.'Controller.php';
         $ctrlClass='\\app\\'.self::$module.'\\controller\\'.self::$controller.'Controller';
-        if(is_file($ctrlFile)){
-            //include $ctrlFile;
-            //$ctrl = new $ctrlClass;
-            //$ctrl->$action();
-            $prm = $_POST?$_POST:$_GET;
-            self::url_params_bind($ctrlClass,self::$action,$prm);
-            
-            // 日志类初始化
-            \weeio\lib\log::init();
-            \weeio\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.self::$action);
-        }else{
-            throw new \Exception('找不到控制器'.self::$controller);
-        }
+        $prm = $_POST?$_POST:$_GET;
+        self::url_params_bind($ctrlClass,self::$action,$prm);
+        
+        // 日志类初始化
+        \weeio\lib\log::init();
+        \weeio\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.self::$action);
     }
     static public function load($class){
         //自动加载类库
@@ -83,12 +75,12 @@ class weeio{
         $controllerReflection = new \ReflectionClass($ctrlClass);
         // 判断该类是否可实例化对象
         if (!$controllerReflection->isInstantiable()) {
-            throw new \RuntimeException("{$controllerReflection->getName()}不能被实例化");
+            throw new \RuntimeException("{$controllerReflection->getName()}控制器类不能被实例化!");
         }
     
         // 判断指定成员方法是否存在
         if (!$controllerReflection->hasMethod($action)) {
-            throw new \RuntimeException("{$controllerReflection->getName()}没有指定的方法:{$action}");
+            throw new \RuntimeException("{$controllerReflection->getName()}找不到类方法:{$action}");
         }
         // 获取对应方法的反射
         $actionReflection = $controllerReflection->getMethod($action);
