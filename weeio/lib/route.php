@@ -22,13 +22,15 @@ class route{
          * 2.获取URL参数部分
          * 3.返回对应控制器和方法
          */
-        if(isset($_SERVER['REQUEST_URI'])&&$_SERVER['REQUEST_URI']!='/'){
+        $path = strstr($_SERVER['REQUEST_URI'],'?',true); # 去掉URL?号后面字符串(包括?)
+        $path = $path?$path:$_SERVER['REQUEST_URI'];
+        if(isset($_SERVER['REQUEST_URI'])&&$path!='/'){
             // Admin/index/index/id/01/name/dejan/sex/man
             //  [0] /[1] /[2] /[3]/[4]/[5] /[6] /[7] /[8]
             
             // index/index/id/01/name/dejan/sex/man
             //  [0]/[1] /[2]/[3]/[4] / [5] /[6]/[7]
-            $path = str_replace('.html','',$_SERVER['REQUEST_URI']);
+            $path = str_replace('.html','',$path);
             $patharr = explode('/',trim($path,'/'));
             if(isset($patharr[0])){
                 // 判断访问应用模块
