@@ -33,7 +33,7 @@ class weeio{
         // new \weeio\route();
         // $class = '\weeio\route';
         // ROOT.'/weeio/route.php';
-        if(isset($classMap[$class])){
+        if(isset(self::$classMap[$class])){
             return true;
         }else{
             $class = str_replace('\\','/',$class);
